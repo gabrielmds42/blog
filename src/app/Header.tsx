@@ -54,9 +54,9 @@ export default function Header() {
             <ChevronLeft strokeWidth={1.5} />
           </div>
           <div className="flex flex-col max-sm:items-center">
-            Luke Berry
+            Gabriel Magalhães
             <span className="text-zinc-500 dark:text-zinc-400">
-              Software Engineer
+              Data Engineer
             </span>
           </div>
         </Link>
@@ -84,7 +84,7 @@ export default function Header() {
             aria-label="View projects"
             aria-current={path === "/projects" ? "page" : undefined}
           >
-            /projects
+            projects
             <Triangle
               aria-hidden="true"
               className="absolute left-1/2 mt-1 hidden size-2 fill-sky-500 text-zinc-800 group-aria-[current=page]:block dark:fill-sky-600 dark:text-transparent"
@@ -96,7 +96,7 @@ export default function Header() {
             aria-label="View articles"
             aria-current={path.startsWith("/articles") ? "page" : undefined}
           >
-            /articles
+            articles
             <Triangle
               aria-hidden="true"
               className="absolute left-1/2 mt-1 hidden size-2 fill-sky-500 text-zinc-800 group-aria-[current=page]:block dark:fill-sky-600 dark:text-transparent"
@@ -108,7 +108,7 @@ export default function Header() {
             aria-label="View about page"
             aria-current={path === "/about" ? "page" : undefined}
           >
-            /about
+            about
             <Triangle
               aria-hidden="true"
               className="absolute left-1/2 mt-1 hidden size-2 fill-sky-500 text-zinc-800 group-aria-[current=page]:block dark:fill-sky-600 dark:text-transparent"

@@ -76,7 +76,7 @@ export default function AboutPage() {
         <p>
           If you want to get in touch, send me a DM on{" "}
           <a href="https://x.com/lukeberrypi">X</a> or an email{" "}
-          <a href="mailto:lukeberrypi@gmail.com">lukeberrypi@gmail.com</a>.
+          <a href="mailto:contato.magalhaesgabriel@gmail.com">contato.magalhaesgabriel@gmail.com</a>.
         </p>
         <p>Smile, you&apos;re alive :)</p>
         <p>
