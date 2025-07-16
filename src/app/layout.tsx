@@ -8,8 +8,19 @@ import dynamic from "next/dynamic";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
-  title: "Gabriel Magalhães",
-  description: "Gabriel Magalhães's personal website",
+  title: "Gabriel Magalhães | Portfólio",
+  description:
+    "Site pessoal de Gabriel Magalhães, profissional de dados e tecnologia.",
+  keywords: [
+    "Gabriel Magalhães",
+    "engenheiro de dados",
+    "portfólio",
+    "Python",
+    "SQL",
+    "Power BI",
+    "pyspark",
+  ],
+  authors: [{ name: "Gabriel Magalhães", url: "https://github.com/gabrielmds42" }],
 };
 
 const karla = Karla({
@@ -17,7 +28,6 @@ const karla = Karla({
   weight: "400",
 });
 
-// https://www.reddit.com/r/nextjs/comments/1bhfikg/comment/kxwj9ou/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 const Header = dynamic(() => import("./Header"), { ssr: false });
 
 export default function RootLayout({
@@ -26,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="min-h-screen">
+    <html lang="pt-BR" className="min-h-screen">
       <body className={`${karla.className} min-h-full px-6`}>
         <Analytics />
         <Script id="theme-toggle" strategy="afterInteractive">
@@ -43,29 +53,23 @@ export default function RootLayout({
           <div className="flex items-center gap-4">
             <a
               className="decoration-zinc-500 underline-offset-4 transition-all sm:hover:underline dark:decoration-zinc-400"
-              href="https://github.com/LukeberryPi/blog"
+              href="https://github.com/gabrielmds42/blog"
               target="_blank"
             >
-              Code
+              Código do site
             </a>
-            <Link
+            {/* <a
               className="decoration-zinc-500 underline-offset-4 transition-all sm:hover:underline dark:decoration-zinc-400"
-              target="_blank"
-              href="/rss.xml"
-            >
-              RSS Feed
-            </Link>
-            <a
-              className="decoration-zinc-500 underline-offset-4 transition-all sm:hover:underline dark:decoration-zinc-400"
-              href="https://x.com/LukeberryPi"
+              href="https://linkedin.com/in/gabriel-magalhães-de-souza"
               target="_blank"
             >
-              @LukeberryPi
-            </a>
+              LinkedIn
+            </a> */}
+            {/* <a href="https://x.com/seuUsuarioAqui">X</a> */}
           </div>
-          <blockquote className="text-zinc-800 dark:text-zinc-300">
+          {/* <blockquote className="text-zinc-800 dark:text-zinc-300">
             Smile, you&apos;re alive :)
-          </blockquote>
+          </blockquote> */}
         </footer>
       </body>
     </html>

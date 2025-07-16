@@ -1,55 +1,32 @@
-import { GitBranch, Globe } from "lucide-react";
-import Image from "next/image";
+import { GitBranch } from "lucide-react";
 import { ReactNode } from "react";
 
 interface Project {
   name: string;
   description: string;
-  imageUrl: string;
   githubUrl: string;
-  url: string;
   technologies: ReactNode;
 }
 
 const projects: Project[] = [
   {
-    name: "css2wind",
+    name: "pipeline_api",
     description:
-      "Learn TailwindCSS by playing a minigame: there are eight CSS properties that you must translate to the equivalent TailwindCSS utility. Bet you can't get 8/8.",
-    url: "https://css2wind.com",
-    imageUrl: "/projects/css2wind.png",
-    githubUrl: "https://github.com/LukeberryPi/css2wind",
+      "Pipeline de engenharia de dados que coleta preços do Bitcoin via API, transforma com Pandas e carrega em PostgreSQL. Também possui dashboard interativo com Streamlit. Documentação completa no GitHub. Ideal pra entender o ciclo ETL de ponta a ponta com Python.",
+    githubUrl: "https://github.com/gabrielmds42/pipeline_api",
     technologies: (
-      <div className="flex items-center gap-x-3">
-        <span className="rounded-full bg-[#007ACC] px-2.5 py-0.5 text-sm text-zinc-100 dark:bg-inherit dark:text-zinc-200 dark:ring-1 dark:ring-zinc-500">
-          TypeScript
+      <div className="flex flex-wrap items-center gap-3">
+        <span className="rounded-full bg-yellow-300 px-2.5 py-0.5 text-sm text-black dark:bg-inherit dark:text-zinc-200 dark:ring-1 dark:ring-zinc-500">
+          Python
         </span>
-        <span className="rounded-full bg-[#38BDF9] px-2.5 py-0.5 text-sm text-zinc-950 dark:bg-inherit dark:text-zinc-200 dark:ring-1 dark:ring-zinc-500">
-          TailwindCSS
+        {/* <span className="rounded-full bg-sky-300 px-2.5 py-0.5 text-sm text-black dark:bg-inherit dark:text-zinc-200 dark:ring-1 dark:ring-zinc-500">
+          Power BI
+        </span> */}
+        <span className="rounded-full bg-indigo-400 px-2.5 py-0.5 text-sm text-white dark:bg-inherit dark:text-zinc-200 dark:ring-1 dark:ring-zinc-500">
+          PostgreSQL
         </span>
-        <span className="rounded-full bg-black px-2.5 py-0.5 text-sm text-zinc-100 dark:bg-inherit dark:text-zinc-200 dark:ring-1 dark:ring-zinc-500">
-          Next.js
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: "phived",
-    description:
-      "Stop procrastinating by dealing with five tasks at a time. If you want to add more tasks you need to resolve a previous one. Surprisingly effective.",
-    url: "https://phived.com",
-    imageUrl: "/projects/phived.png",
-    githubUrl: "https://github.com/LukeberryPi/phived",
-    technologies: (
-      <div className="flex items-center gap-x-3">
-        <span className="rounded-full bg-[#00D8FE] px-2.5 py-0.5 text-sm text-zinc-950 dark:bg-inherit dark:text-inherit dark:ring-1 dark:ring-zinc-500">
-          React
-        </span>
-        <span className="rounded-full bg-[#38BDF9] px-2.5 py-0.5 text-sm text-zinc-950 dark:bg-inherit dark:text-inherit dark:ring-1 dark:ring-zinc-500">
-          TailwindCSS
-        </span>
-        <span className="rounded-full bg-gradient-to-r from-[#926AFE] to-[#49C7FF] px-2.5 py-0.5 text-sm text-zinc-100 dark:bg-none dark:ring-1 dark:ring-zinc-500">
-          Vite
+        <span className="rounded-full bg-gray-600 px-2.5 py-0.5 text-sm text-white dark:bg-inherit dark:text-zinc-200 dark:ring-1 dark:ring-zinc-500">
+          Pandas
         </span>
       </div>
     ),
@@ -59,40 +36,25 @@ const projects: Project[] = [
 function ProjectCard({
   name,
   description,
-  imageUrl,
   githubUrl,
-  url,
   technologies,
 }: Project) {
   return (
     <div className="flex-col divide-y divide-zinc-400 overflow-hidden rounded ring-1 ring-zinc-400 dark:divide-zinc-500 dark:ring-zinc-500">
       <div className="flex items-center justify-between gap-4 p-4 max-sm:flex-col">
-        <h2 className="text-xl">{name}</h2>
+        <h2 className="text-xl font-semibold">{name}</h2>
         {technologies}
       </div>
       <div>
         <p className="p-4">{description}</p>
       </div>
-      <Image
-        src={imageUrl}
-        width={620}
-        height={324}
-        alt="Logo for css2wind website"
-      />
-      <div className="flex w-full justify-between divide-x divide-zinc-400 dark:divide-zinc-500">
-        <a
-          href={url}
-          target="_blank"
-          className="flex grow items-center justify-center gap-2 py-4 transition-all sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-800"
-        >
-          <Globe strokeWidth={1.5} className="size-4" /> Visit website
-        </a>
+      <div className="flex w-full justify-center border-t border-zinc-400 dark:border-zinc-500">
         <a
           href={githubUrl}
           target="_blank"
-          className="flex grow items-center justify-center gap-2 py-4 transition-all sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-800"
+          className="flex w-full items-center justify-center gap-2 py-4 transition-all sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-800"
         >
-          <GitBranch strokeWidth={1.5} className="size-4" /> View code
+          <GitBranch strokeWidth={1.5} className="size-4" /> Ver código no GitHub
         </a>
       </div>
     </div>
@@ -103,11 +65,11 @@ export default function ProjectsPage() {
   return (
     <>
       <h1 className="mb-16 mt-4 text-center text-5xl max-sm:text-4xl">
-        Projects
+        Projetos
       </h1>
       <div className="space-y-20">
         {projects.map((project) => (
-          <ProjectCard key={project.url} {...project} />
+          <ProjectCard key={project.githubUrl} {...project} />
         ))}
       </div>
     </>
