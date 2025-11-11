@@ -31,12 +31,20 @@ export default function AboutPage() {
           Após cerca de um ano nessa posição, assumi um novo desafio como Analista de Informações
           Gerenciais no{" "}
           <a href="https://seb.com.br/"
-          target="_blank">Grupo SEB</a>. Nesta função, tenho aprendido bastante
+          target="_blank">Grupo SEB</a>. Nesta função, eu aprendi bastante
           sobre finanças e negócios, o que tem sido um grande e empolgante desafio.
           No dia a dia, utilizo ferramentas como Python, SQL Server, Power BI, Excel,
           Databricks, Pandas e PySpark — entre outras.
         </p>
-
+        <p>
+          Atualmente, sou Engenheiro de Dados Pleno na{' '}
+          <a href="https://www.ey.com/pt_br" target="_blank" rel="noopener noreferrer">
+          EY
+          </a>
+          . Esta função representa um dos maiores desafios da minha jornada
+          profissional, sendo uma oportunidade incrível para aplicar minha experiência
+          em um ambiente de consultoria global e continuar crescendo.
+        </p>
         <p>
           Além disso, sempre busquei aprimorar meus conhecimentos técnicos por meio de cursos,
           certificações, treinamentos, palestras e projetos pessoais. Concluí minha graduação em
